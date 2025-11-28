@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pranav Ahirrao | AI & DS Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio website of Pranav Ahirrao, B.Tech AI & DS student at Zeal College of Engineering and Research, Pune." />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-color: #050816;
+            --bg-soft: #0f172a;
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.12);
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --card-bg: #020617;
+            --border-soft: rgba(148, 163, 184, 0.25);
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.9);
+            --radius-lg: 18px;
+            --radius-xl: 26px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at top, #1f2933 0, #020617 40%, #020617 100%);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .wrapper {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 24px 18px 60px;
+        }
+
+        /* Glassy main card */
+        .shell {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.85));
+            border-radius: 28px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            backdrop-filter: blur(22px);
+        }
+
+        /* Top gradient strip */
+        .shell-header-strip {
+            height: 5px;
+            background: linear-gradient(90deg, #38bdf8, #a855f7, #ec4899, #22c55e);
+        }
+
+        /* Navbar */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 22px 10px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, #38bdf8, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #e5f9ff;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            box-shadow: 0 10px 25px rgba(8, 47, 73, 0.7);
+        }
+
+        .logo-text-main {
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .logo-text-sub {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 18px;
+        }
+
+        nav a {
+            font-size: 0.88rem;
+            text-decoration: none;
+            color: var(--text-muted);
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            transition: all 0.25s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+            border-color: rgba(148, 163, 184, 0.6);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        /* Hero / Intro */
+        .hero {
+            padding: 16px 22px 26px;
+            display: grid;
+            grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+            gap: 26px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 23, 42, 0.8);
+            border-radius: 999px;
+            padding: 4px 12px 4px 5px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            margin-bottom: 10px;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .badge-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+        }
+
+        .hero-title {
+            font-size: 1.9rem;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 0.96rem;
+            max-width: 26rem;
+            margin-bottom: 18px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .hero-tag {
+            font-size: 0.78rem;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            background: rgba(15, 23, 42, 0.9);
+            color: var(--text-muted);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn-primary,
+        .btn-ghost {
+            font-size: 0.86rem;
+            border-radius: 999px;
+            padding: 8px 18px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #6366f1);
+            color: #0b1220;
+            font-weight: 600;
+            box-shadow: 0 13px 28px rgba(56, 189, 248, 0.55);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 38px rgba(56, 189, 248, 0.75);
+        }
+
+        .btn-ghost {
+            background: rgba(15, 23, 42, 0.95);
+            color: var(--text-main);
+            border-color: rgba(148, 163, 184, 0.7);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        /* Hero right */
+        .hero-right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-card {
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), rgba(15, 23, 42, 0.96));
+            border-radius: 28px;
+            padding: 18px 18px 16px;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            width: 100%;
+            max-width: 320px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            inset: -40%;
+            background: radial-gradient(circle at top, rgba(248, 250, 252, 0.05), transparent 55%);
+            opacity: 0.85;
+        }
+
+        .hero-card-inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-card-title {
+            font-size: 0.92rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .hero-card-sub {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .hero-card-chip {
+            display: inline-block;
+            font-size: 0.72rem;
+            padding: 4px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .hero-card-list {
+            list-style: none;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .hero-card-list li {
+            margin-bottom: 5px;
+        }
+
+        .hero-card-footer {
+            margin-top: 10px;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            opacity: 0.9;
+        }
+
+        /* Sections generic */
+        section {
+            padding: 24px 22px 10px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-heading {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-pill {
+            font-size: 0.72rem;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            color: var(--accent);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.3fr);
+            gap: 18px;
+            font-size: 0.9rem;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list li {
+            margin-bottom: 7px;
+        }
+
+        .muted-label {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            display: block;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            font-size: 0.86rem;
+        }
+
+        .skills-card {
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: var(--radius-lg);
+            padding: 10px 12px;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+        }
+
+        .skills-card h4 {
+            font-size: 0.86rem;
+            margin-bottom: 6px;
+        }
+
+        .skills-card ul {
+            list-style: none;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .skills-card li {
+            margin-bottom: 4px;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            font-size: 0.86rem;
+        }
+
+        .project-card {
+            background: radial-gradient(circle at top, var(--accent-soft), rgba(15, 23, 42, 0.96));
+            border-radius: var(--radius-xl);
+            padding: 12px 14px 13px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+        }
+
+        .project-tag {
+            font-size: 0.72rem;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .project-title {
+            font-size: 0.96rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .project-desc {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .project-meta {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            font-size: 0.78rem;
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Certs */
+        .cert-list {
+            list-style: none;
+            font-size: 0.86rem;
+        }
+
+        .cert-list li {
+            margin-bottom: 4px;
+            color: var(--text-muted);
+        }
+
+        /* Links */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+            font-size: 0.86rem;
+        }
+
+        .link-card {
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: var(--radius-lg);
+            padding: 10px 12px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .link-card-title {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+        }
+
+        .link-card a {
+            font-size: 0.84rem;
+            text-decoration: none;
+            color: var(--accent);
+            word-break: break-all;
+        }
+
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+            gap: 18px;
+            font-size: 0.86rem;
+        }
+
+        .contact-card {
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: var(--radius-lg);
+            padding: 10px 12px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 14px 22px 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            border-top: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        footer span.highlight {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-right {
+                order: -1;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .projects-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid,
+            .links-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            nav ul {
+                display: none; /* Simple mobile behaviour */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wrapper {
+                padding: 18px 12px 40px;
+            }
+
+            header {
+                padding: 14px 16px 6px;
+            }
+
+            .hero,
+            section,
+            footer {
+                padding-inline: 16px;
+            }
+
+            .skills-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="shell">
+            <div class="shell-header-strip"></div>
+
+            <!-- NAVBAR -->
+            <header>
+                <div class="logo">
+                    <div class="logo-avatar">P</div>
+                    <div>
+                        <div class="logo-text-main">Pranav Ahirrao</div>
+                        <div class="logo-text-sub">AI &amp; DS · SY B.Tech</div>
+                    </div>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#links">Links</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- HERO / HOME -->
+            <section id="home" class="hero">
+                <div>
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Available for projects &amp; collaborations
+                    </div>
+
+                    <h1 class="hero-title">
+                        Hi, I’m <span>Pranav Ahirrao</span> 👋
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        I’m a B.Tech student in Artificial Intelligence &amp; Data Science at Zeal College of Engineering and Research, Pune.
+                        I love working with Python, data, and real-world problem solving.
+                    </p>
+
+                    <div class="hero-tags">
+                        <span class="hero-tag">Python</span>
+                        <span class="hero-tag">Data Science</span>
+                        <span class="hero-tag">Machine Learning (Basics)</span>
+                        <span class="hero-tag">Web Dev</span>
+                        <span class="hero-tag">Cloud Basics</span>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn-primary">
+                            View Projects
+                        </a>
+                        <a href="#contact" class="btn-ghost">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-card">
+                        <div class="hero-card-inner">
+                            <div class="hero-card-chip">B.Tech · AI &amp; DS</div>
+                            <div class="hero-card-title">Zeal College of Engineering and Research</div>
+                            <div class="hero-card-sub">Pune, Maharashtra, India</div>
+                            <ul class="hero-card-list">
+                                <li>🎓 Second Year (SY)</li>
+                                <li>💻 Passionate about Python &amp; ML</li>
+                                <li>📊 Loves working with data &amp; visualizations</li>
+                            </ul>
+                            <div class="hero-card-footer">
+                                “Made with curiosity, consistency, and lots of debugging.”
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section id="about">
+                <h2 class="section-heading">
+                    About Me
+                    <span class="section-pill">Basics</span>
+                </h2>
+
+                <div class="about-grid">
+                    <div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
+                            I am exploring the fields of Artificial Intelligence, Data Science, and Web Development.
+                            I enjoy building small, focused projects that help me strengthen my fundamentals in programming,
+                            data handling, and problem-solving.
+                        </p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            My current goals include improving my Python skills, understanding machine learning workflows,
+                            and contributing to open-source or collaborative projects with my peers.
+                        </p>
+                    </div>
+
+                    <div>
+                        <ul class="about-list">
+                            <li>
+                                <span class="muted-label">Name</span>
+                                <strong>Pranav Ahirrao</strong>
+                            </li>
+                            <li>
+                                <span class="muted-label">Course</span>
+                                B.Tech in Artificial Intelligence &amp; Data Science
+                            </li>
+                            <li>
+                                <span class="muted-label">College</span>
+                                Zeal College of Engineering and Research, Pune
+                            </li>
+                            <li>
+                                <span class="muted-label">Year</span>
+                                Second Year (SY)
+                            </li>
+                            <li>
+                                <span class="muted-label">Location</span>
+                                Pune, Maharashtra, India
+                            </li>
+                            <li>
+                                <span class="muted-label">Email</span>
+                                <a href="mailto:pranavahirrao1@gmail.com" style="color: var(--accent); text-decoration: none;">
+                                    pranavahirrao1@gmail.com
+                                </a>
+                            </li>
+                            <li>
+                                <span class="muted-label">Contact No.</span>
+                                <a href="tel:+919503626832" style="color: var(--accent); text-decoration: none;">
+                                    +91 95036 26832
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills">
+                <h2 class="section-heading">
+                    Skills
+                    <span class="section-pill">Tech Stack</span>
+                </h2>
+
+                <div class="skills-grid">
+                    <div class="skills-card">
+                        <h4>Programming Languages</h4>
+                        <ul>
+                            <li>Python</li>
+                            <li>C / C++</li>
+                            <li>Basic Java</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-card">
+                        <h4>Data &amp; AI Skills</h4>
+                        <ul>
+                            <li>Machine Learning (Basics)</li>
+                            <li>Data Analysis (Pandas, NumPy)</li>
+                            <li>Data Visualization (Matplotlib)</li>
+                            <li>Basic SQL &amp; Database Concepts</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-card">
+                        <h4>Web &amp; Cloud Skills</h4>
+                        <ul>
+                            <li>Basic HTML / CSS</li>
+                            <li>WordPress / Wix website creation</li>
+                            <li>Introduction to Cloud (AWS / Azure concepts)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-card">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li>Jupyter Notebook</li>
+                            <li>Google Colab</li>
+                            <li>Visual Studio Code</li>
+                            <li>Git &amp; GitHub (Basic)</li>
+                            <li>MS Excel</li>
+                        </ul>
+                    </div>
+
+                    <div class="skills-card">
+                        <h4>Soft Skills</h4>
+                        <ul>
+                            <li>Problem Solving</li>
+                            <li>Team Collaboration</li>
+                            <li>Curiosity to learn new tech</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <h2 class="section-heading">
+                    Projects
+                    <span class="section-pill">Hands-on</span>
+                </h2>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-tag">Python · Data Analysis</div>
+                        <h3 class="project-title">Student Result Analysis Dashboard</h3>
+                        <p class="project-desc">
+                            A Python-based mini dashboard that analyzes student marks data to understand
+                            performance trends. It calculates averages, highest and lowest scores, and
+                            visualizes subject-wise performance to identify strong and weak areas.
+                        </p>
+                        <p class="project-meta">
+                            <strong>Tech Stack:</strong> Python, Pandas, NumPy, Matplotlib
+                        </p>
+                        <a href="#" class="project-link">
+                            GitHub Repository (Coming Soon)
+                        </a>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-tag">Python · CLI App</div>
+                        <h3 class="project-title">Personal Expense Tracker</h3>
+                        <p class="project-desc">
+                            A simple command-line Expense Tracker that lets users add daily expenses,
+                            categorize them (food, travel, etc.), and view total spending for a selected period.
+                            Helps in managing monthly budgets and understanding spending habits.
+                        </p>
+                        <p class="project-meta">
+                            <strong>Tech Stack:</strong> Python, File Handling / CSV
+                        </p>
+                        <a href="#" class="project-link">
+                            GitHub Repository (Coming Soon)
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- CERTIFICATIONS -->
+            <section id="certifications">
+                <h2 class="section-heading">
+                    Certifications &amp; Achievements
+                    <span class="section-pill">Growth</span>
+                </h2>
+
+                <ul class="cert-list">
+                    <li>Completed college mini-projects in Python.</li>
+                    <li>Actively practicing Python &amp; problem-solving on online platforms.</li>
+                    <li>Learning SQL and basic Machine Learning from online resources.</li>
+                    <li>Participated in technical and coding-related activities at college.</li>
+                </ul>
+            </section>
+
+            <!-- IMPORTANT LINKS -->
+            <section id="links">
+                <h2 class="section-heading">
+                    Important Links
+                    <span class="section-pill">Profiles</span>
+                </h2>
+
+                <div class="links-grid">
+                    <div class="link-card">
+                        <div class="link-card-title">GitHub Profile</div>
+                        <a href="https://github.com/" target="_blank" rel="noreferrer">
+                            https://github.com/pranavahirrao
+                        </a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="link-card-title">LinkedIn Profile</div>
+                        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                            https://www.linkedin.com/in/pranavahirrao
+                        </a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="link-card-title">HackerRank Profile</div>
+                        <a href="https://www.hackerrank.com/" target="_blank" rel="noreferrer">
+                            https://www.hackerrank.com/pranavahirrao
+                        </a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="link-card-title">LeetCode Profile</div>
+                        <a href="https://leetcode.com/" target="_blank" rel="noreferrer">
+                            https://leetcode.com/pranavahirrao
+                        </a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="link-card-title">Portfolio Website (WordPress)</div>
+                        <a href="https://yourname.wordpress.com" target="_blank" rel="noreferrer">
+                            https://yourname.wordpress.com
+                        </a>
+                    </div>
+
+                    <div class="link-card">
+                        <div class="link-card-title">Portfolio Website (Wix)</div>
+                        <a href="https://yourname.wixsite.com" target="_blank" rel="noreferrer">
+                            https://yourname.wixsite.com
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESUME -->
+            <section id="resume">
+                <h2 class="section-heading">
+                    Resume
+                    <span class="section-pill">PDF</span>
+                </h2>
+
+                <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 8px;">
+                    You can view or download my latest resume using the link below:
+                </p>
+
+                <a href="#" class="btn-ghost" style="margin-bottom: 6px;">
+                    Click to Download My Resume (Coming Soon)
+                </a>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact">
+                <h2 class="section-heading">
+                    Contact Me
+                    <span class="section-pill">Let’s Talk</span>
+                </h2>
+
+                <div class="contact-grid">
+                    <div>
+                        <p style="font-size: 0.86rem; color: var(--text-muted); margin-bottom: 10px;">
+                            Have a project idea, question, or want to collaborate on something related to
+                            AI, Data Science, or Python mini-projects? I’d be happy to connect!
+                        </p>
+
+                        <ul class="contact-list">
+                            <li>
+                                <span class="muted-label">Email</span>
+                                <a href="mailto:pranavahirrao1@gmail.com" style="color: var(--accent); text-decoration: none;">
+                                    pranavahirrao1@gmail.com
+                                </a>
+                            </li>
+                            <li>
+                                <span class="muted-label">Contact No.</span>
+                                <a href="tel:+919503626832" style="color: var(--accent); text-decoration: none;">
+                                    +91 95036 26832
+                                </a>
+                            </li>
+                            <li>
+                                <span class="muted-label">Location</span>
+                                Pune, Maharashtra, India
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-card">
+                        <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 8px;">
+                            Quick Connect Ideas:
+                        </p>
+                        <ul class="contact-list" style="font-size: 0.84rem; color: var(--text-muted);">
+                            <li>• Collaborate on Python or data analysis mini-projects.</li>
+                            <li>• Discuss AI &amp; Data Science learning resources.</li>
+                            <li>• Share internship or hackathon opportunities.</li>
+                            <li>• Connect for group study or coding practice.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer>
+                <div>
+                    © 2025 <span class="highlight">Pranav Ahirrao</span>. All rights reserved.
+                </div>
+                <div>
+                    Designed using <span class="highlight">WordPress / Wix</span> inspiration · Made with ❤ by an aspiring AI &amp; DS Engineer.
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
